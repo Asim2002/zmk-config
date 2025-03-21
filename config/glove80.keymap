@@ -151,12 +151,12 @@
 
         gaming {
             bindings = <
-&none  &none      &none         &kp I         &none                                                                         &none  &none  &none  &none  &none
-&none  &kp N1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                                                   &none  &none  &none  &none  &none  &none
-&none  &none      &kp Q         &kp W         &kp E         &kp R                                                    &none  &none  &none  &none  &none  &none
-&none  &kp LCTRL  &kp A         &kp S         &kp D         &kp F                                                    &none  &none  &none  &none  &none  &none
-&none  &none      &none         &kp X         &kp C         &kp V   &none      &none  &tog 3    &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none      &none         &kp MINUS     &kp PLUS              &kp SPACE  &none  &none     &none  &none  &none         &none  &none  &none  &none  &none
+&none  &none      &none         &kp I         &none                                                                                                 &none       &none       &none       &none           &none
+&none  &kp N1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                                                                           &none  &none       &none       &none       &none           &none
+&none  &none      &kp Q         &kp W         &kp E         &kp R                                                                            &none  &none       &none       &none       &none           &none
+&none  &kp LCTRL  &kp A         &kp S         &kp D         &kp F                                                                            &none  &none       &none       &none       &none           &none
+&none  &none      &none         &kp X         &kp C         &kp V   &none      &none  &tog 3    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none  &none       &none       &none       &none           &none
+&none  &none      &none         &kp MINUS     &kp PLUS              &kp SPACE  &none  &none     &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2         &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &bt BT_CLR_ALL  &none
             >;
         };
     };
