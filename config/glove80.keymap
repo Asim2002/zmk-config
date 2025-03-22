@@ -22,19 +22,12 @@
 #define LOWER 1
 #define MAGIC 2
 
-// multiplies the current speed by 1/4 when the MAGIC layer is active (i.e. when mousing, hold the layer button to go into precision mode)
+// multiplies the current speed by 1/2 when the MAGIC layer is active (i.e. when mousing, hold the layer button to go into precision mode)
 
 &mmv_input_listener {
     precision {
         layers = <MAGIC>;
-        input-processors = <&zip_xy_scaler 1 4>;
-    };
-};
-
-&msc_input_listener {
-    precision {
-        layers = <MAGIC>;
-        input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP)>;
+        input-processors = <&zip_xy_scaler 1 2>;
     };
 };
 
