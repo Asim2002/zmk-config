@@ -83,9 +83,9 @@
             compatible = "zmk,behavior-input-two-axis";
             label = "MV";
             #binding-cells = <1>;
-            x-input-code = <0>;
+            x-input-code = <INPUT_REL_X>;
             trigger-period-ms = <16>;
-            y-input-code = <1>;
+            y-input-code = <INPUT_REL_Y>;
             delay-ms = <0>;
             time-to-max-speed-ms = <64>;
             acceleration-exponent = <1>;
@@ -95,8 +95,8 @@
             compatible = "zmk,behavior-input-two-axis";
             label = "ACC_MV";
             #binding-cells = <1>;
-            x-input-code = <0>;
-            y-input-code = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
             trigger-period-ms = <16>;
             delay-ms = <0>;
             time-to-max-speed-ms = <64>;
