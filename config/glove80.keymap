@@ -24,20 +24,15 @@
 #define FAST_MOUSE 3
 #define GAMING 4
 
-// multiplies the current speed by 1/2 when the MAGIC layer is active (i.e. when mousing, hold the layer button to go into precision mode)
-// not sure how to add to add 2 precision blocks to this struct, so I just create a mimic of mmv for the slow_mouse
-// &mv_input_listener {
-//    precision {
-//        layers = <MAGIC>;
-//        input-processors = <&zip_xy_scaler 1 2>;
-//    };
-// };
-
 &mmv_input_listener {
-    input-processors = <&zip_xy_scaler 4 1>;
+    input-processors = <&zip_xy_scaler 1.25 1>;
     precision {
         layers = <SLOW_MOUSE>;
         input-processors = <&zip_xy_scaler 1 2>;
+    };
+    turbo {
+        layers = <FAST_MOUSE>;
+        input-processors = <&zip_xy_scaler 4 1>;
     };
 };
 
@@ -195,8 +190,8 @@
             bindings = <
 &none         &none      &none           &none              &none                                                                                                                               &none         &none          &none               &none           &none
 &trans        &none      &kp F2          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none                                                                                                   &none      &none         &kp RC(W)      &kp RC(RS(T))       &kp F12         &none
-&kp DELETE    &none      &none           &mv MOVE_UP       &kp LC(LS(TAB))  &kp LC(TAB)                                                                                             &mo 2      &kp RA(LEFT)  &kp RC(A)      &kp RA(RIGHT)       &kp RC(S)       &none
-&kp TAB       &mkp RCLK  &mv MOVE_LEFT  &mv MOVE_DOWN     &mv MOVE_RIGHT  &msc SCRL_UP                                                                                            &kp RC(Z)  &kp RC(C)     &kp RC(V)      &kp RS(RA(ESCAPE))  &kp RA(ESCAPE)  &kp RC(T)
+&kp DELETE    &none      &none           &mmv MOVE_UP       &kp LC(LS(TAB))  &kp LC(TAB)                                                                                             &mo 2      &kp RA(LEFT)  &kp RC(A)      &kp RA(RIGHT)       &kp RC(S)       &none
+&kp TAB       &mkp RCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN     &mmv MOVE_RIGHT  &msc SCRL_UP                                                                                            &kp RC(Z)  &kp RC(C)     &kp RC(V)      &kp RS(RA(ESCAPE))  &kp RA(ESCAPE)  &kp RC(T)
 &kp ESCAPE    &none      &none           &none              &msc SCRL_DOWN   &none         &hold_tap LEFT_SHIFT HOME  &none      &tog 4       &none      &none  &hold_tap RCTRL END  &mo 3      &kp RC(Y)     &kp RC(SLASH)  &kp RC(F)           &kp RC(H)       &none
 &kp LEFT_WIN  &kp HOME   &kp END         &kp LEFT           &kp RIGHT                      &mkp LCLK                  &mkp MCLK  &kp ENTER    &kp SPACE  &to 0  &kp BACKSPACE                   &kp UP_ARROW  &kp DOWN       &none               &none           &trans
             >;
