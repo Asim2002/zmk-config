@@ -24,22 +24,6 @@
 #define FAST_MOUSE 3
 #define GAMING 4
 
-// multiplies the current speed by 1/2 when the MAGIC layer is active (i.e. when mousing, hold the layer button to go into precision mode)
-// not sure how to add to add 2 precision blocks to this struct, so I just create a mimic of mmv for the slow_mouse
-&mv_input_listener {
-    precision {
-        layers = <MAGIC>;
-        input-processors = <&zip_xy_scaler 1 2>;
-    };
-};
-
-&mmv_input_listener {
-    precision {
-        layers = <FAST_MOUSE>;
-        input-processors = <&zip_xy_scaler 4 1>;
-    };
-};
-
 / {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
@@ -139,6 +123,22 @@
             label = "ONE_SHOT_HOLD_TOGGLE";
             #binding-cells = <0>;
             bindings = <&ht_mo_sl 2 1>, <&tog 1>;
+        };
+    };
+
+    // multiplies the current speed by 1/2 when the MAGIC layer is active (i.e. when mousing, hold the layer button to go into precision mode)
+    // not sure how to add to add 2 precision blocks to this struct, so I just create a mimic of mmv for the slow_mouse
+    &mv_input_listener {
+        precision {
+            layers = <MAGIC>;
+            input-processors = <&zip_xy_scaler 1 2>;
+        };
+    };
+
+    &mmv_input_listener {
+        precision {
+            layers = <FAST_MOUSE>;
+            input-processors = <&zip_xy_scaler 4 1>;
         };
     };
 
