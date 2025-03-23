@@ -25,7 +25,6 @@
 #define GAMING 4
 
 &mmv_input_listener {
-    input-processors = <&zip_xy_scaler 1.25 1>;
     precision {
         layers = <SLOW_MOUSE>;
         input-processors = <&zip_xy_scaler 1 2>;
