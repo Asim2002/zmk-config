@@ -18,20 +18,24 @@
 
 // layers
 
-#define DEFAULT 0
-#define LOWER 1
+#define KB 0
+#define MOUSE 1
 #define SLOW_MOUSE 2
 #define FAST_MOUSE 3
 #define GAMING 4
 
 &mmv_input_listener {
+    regular {
+        layers = <MOUSE>;
+        input-processors = <&zip_xy_scaler 2 1>;
+    };
     precision {
         layers = <SLOW_MOUSE>;
         input-processors = <&zip_xy_scaler 1 2>;
     };
     turbo {
         layers = <FAST_MOUSE>;
-        input-processors = <&zip_xy_scaler 4 1>;
+        input-processors = <&zip_xy_scaler 8 1>;
     };
 };
 
