@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 15   // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // default: 10
 
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -21,6 +21,8 @@
 #define DEFAULT 0
 #define LOWER 1
 #define MAGIC 2
+#define FAST_MOUSE 3
+#define GAMING 4
 
 // multiplies the current speed by 1/2 when the MAGIC layer is active (i.e. when mousing, hold the layer button to go into precision mode)
 
@@ -28,6 +30,10 @@
     precision {
         layers = <MAGIC>;
         input-processors = <&zip_xy_scaler 1 2>;
+    };
+    precision {
+        layers = <FAST_MOUSE>;
+        input-processors = <&zip_xy_scaler 4 1>;
     };
 };
 
