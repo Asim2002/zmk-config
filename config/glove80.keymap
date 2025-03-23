@@ -31,6 +31,9 @@
         layers = <MAGIC>;
         input-processors = <&zip_xy_scaler 1 2>;
     };
+};
+
+&mmv_input_listener {
     precision {
         layers = <FAST_MOUSE>;
         input-processors = <&zip_xy_scaler 4 1>;
