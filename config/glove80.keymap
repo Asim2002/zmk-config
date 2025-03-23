@@ -81,26 +81,36 @@
 
         mv: mv {
             compatible = "zmk,behavior-input-two-axis";
-            label = "MV";
             #binding-cells = <1>;
             x-input-code = <INPUT_REL_X>;
-            trigger-period-ms = <16>;
             y-input-code = <INPUT_REL_Y>;
-            delay-ms = <0>;
             time-to-max-speed-ms = <64>;
             acceleration-exponent = <1>;
+            // label = "MV";
+            // trigger-period-ms = <16>;
+            // delay-ms = <0>;
+        };
+
+        mv_input_listener: mv_input_listener {
+            compatible = "zmk,input-listener";
+            device = <&mv>;
         };
 
         acc_mv: acc_mv {
             compatible = "zmk,behavior-input-two-axis";
-            label = "ACC_MV";
             #binding-cells = <1>;
             x-input-code = <INPUT_REL_X>;
             y-input-code = <INPUT_REL_Y>;
-            trigger-period-ms = <16>;
-            delay-ms = <0>;
             time-to-max-speed-ms = <64>;
             acceleration-exponent = <2>;
+            // label = "ACC_MV";
+            // trigger-period-ms = <16>;
+            // delay-ms = <0>;
+        };
+        
+        acc_mv_input_listener: acc_mv_input_listener {
+            compatible = "zmk,input-listener";
+            device = <&acc_mv>;
         };
 
         ht_mo_sl: ht_mo_sl {
