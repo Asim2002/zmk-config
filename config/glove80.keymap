@@ -20,9 +20,29 @@
 
 #define DEFAULT 0
 #define LOWER 1
-#define MAGIC 2
+#define SLOW_MOUSE 2
 #define FAST_MOUSE 3
 #define GAMING 4
+
+// multiplies the current speed by 1/2 when the MAGIC layer is active (i.e. when mousing, hold the layer button to go into precision mode)
+// not sure how to add to add 2 precision blocks to this struct, so I just create a mimic of mmv for the slow_mouse
+// &mv_input_listener {
+//    precision {
+//        layers = <MAGIC>;
+//        input-processors = <&zip_xy_scaler 1 2>;
+//    };
+// };
+
+&mmv_input_listener {
+    precision {
+        layers = <FAST_MOUSE>;
+        input-processors = <&zip_xy_scaler 4 1>;
+    };
+    precision {
+        layers = <SLOW_MOUSE>;
+        input-processors = <&zip_xy_scaler 1 2>;
+    };
+};
 
 / {
     behaviors {
@@ -126,22 +146,6 @@
         };
     };
 
-    // multiplies the current speed by 1/2 when the MAGIC layer is active (i.e. when mousing, hold the layer button to go into precision mode)
-    // not sure how to add to add 2 precision blocks to this struct, so I just create a mimic of mmv for the slow_mouse
-    &mv_input_listener {
-        precision {
-            layers = <MAGIC>;
-            input-processors = <&zip_xy_scaler 1 2>;
-        };
-    };
-
-    &mmv_input_listener {
-        precision {
-            layers = <FAST_MOUSE>;
-            input-processors = <&zip_xy_scaler 4 1>;
-        };
-    };
-
     macros {
         bt_0: bt_profile_macro_0 {
             compatible = "zmk,behavior-macro";
@@ -205,8 +209,8 @@
             bindings = <
 &rgb_ug RGB_TOG       &none                 &none           &none           &none                                                                                              &none  &none  &none  &none  &rgb_ug RGB_EFR
 &none                 &none                 &none           &none           &none            &none                                                                      &none  &none  &none  &none  &none  &none
-&none                 &none                 &none           &mv MOVE_UP     &none            &none                                                                      &none  &none  &none  &none  &none  &none
-&bootloader           &mkp RCLK             &mv MOVE_LEFT   &mv MOVE_DOWN   &mv MOVE_RIGHT   &msc SCRL_RIGHT                                                            &none  &none  &none  &none  &none  &bootloader
+&none                 &none                 &none           &mmv MOVE_UP     &none            &none                                                                      &none  &none  &none  &none  &none  &none
+&bootloader           &mkp RCLK             &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &msc SCRL_RIGHT                                                            &none  &none  &none  &none  &none  &bootloader
 &sys_reset            &none                 &none           &none           &msc SCRL_LEFT   &none            &none      &none      &bootloader    &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
 &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none           &none           &none                             &mkp LCLK  &mkp MCLK  &none          &none  &none  &none         &none  &none  &none  &none  &rgb_ug RGB_EFF
             >;
