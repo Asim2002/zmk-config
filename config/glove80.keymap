@@ -206,23 +206,23 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1                 &kp F2                          &kp F3                      &kp F4                   &kp F5                                                                                                                                                                                               &kp F6                  &kp F7                     &kp F8                             &kp F9                               &kp F10
-&hold_tap TILDE GRAVE  &hold_tap EXCLAMATION NUMBER_1  &hold_tap AT_SIGN NUMBER_2  &hold_tap HASH NUMBER_3  &hold_tap DOLLAR NUMBER_4  &hold_tap PERCENT N5                                                                                                                            &hold_tap CARET NUMBER_6  &hold_tap AMPERSAND N7  &hold_tap ASTERISK N8      &hold_tap LEFT_PARENTHESIS N9      &hold_tap RIGHT_PARENTHESIS N0       &none
-&kp DELETE             &hold_tap LS(Q) Q               &hold_tap LS(W) W           &hold_tap LS(E) E        &hold_tap LS(R) R          &hold_tap LS(T) T                                                                                                                               &hold_tap LS(Y) Y         &hold_tap LS(U) U       &hold_tap LS(I) I          &hold_tap LS(O) O                  &hold_tap LS(P) P                    &hold_tap PIPE BACKSLASH
-&kp TAB                &hold_tap LS(A) A               &hold_tap LS(S) S           &hold_tap LS(D) D        &hold_tap LS(F) F          &hold_tap LS(G) G                                                                                                                               &hold_tap LS(H) H         &hold_tap LS(J) J       &hold_tap LS(K) K          &hold_tap LS(L) L                  &hold_tap COLON SEMI                 &hold_tap DOUBLE_QUOTES APOS
-&kp ESCAPE             &hold_tap LS(Z) Z               &hold_tap LS(X) X           &hold_tap LS(C) C        &hold_tap LS(V) V          &hold_tap LS(B) B     &hold_tap LEFT_SHIFT HOME  &kp LA(LC(TAB))       &tog 4       &kp LEFT                    &kp RIGHT  &hold_tap RCTRL END  &hold_tap LS(N) N         &hold_tap LS(M) M       &hold_tap LESS_THAN COMMA  &hold_tap GREATER_THAN DOT         &hold_tap QUESTION SLASH             &none
-&kp LEFT_WIN           &none                           &none                       &kp LEFT                 &kp DOWN                                         &hold_tap UNDER MINUS      &hold_tap PLUS EQUAL  &kp ENTER    &hold_tap LEFT_SHIFT SPACE  &tog 1     &kp BACKSPACE                                  &kp UP                  &kp RIGHT                  &hold_tap LEFT_BRACE LEFT_BRACKET  &hold_tap RIGHT_BRACE RIGHT_BRACKET  &none
+&kp F1                 &kp F2                          &kp F3                      &kp F4                   &kp F5                                                                                                                                                                                            &kp F6                  &kp F7                     &kp F8                             &kp F9                               &kp F10
+&hold_tap TILDE GRAVE  &hold_tap EXCLAMATION NUMBER_1  &hold_tap AT_SIGN NUMBER_2  &hold_tap HASH NUMBER_3  &hold_tap DOLLAR NUMBER_4  &hold_tap PERCENT N5                                                                                                                         &hold_tap CARET NUMBER_6  &hold_tap AMPERSAND N7  &hold_tap ASTERISK N8      &hold_tap LEFT_PARENTHESIS N9      &hold_tap RIGHT_PARENTHESIS N0       &none
+&kp DELETE             &hold_tap LS(Q) Q               &hold_tap LS(W) W           &hold_tap LS(E) E        &hold_tap LS(R) R          &hold_tap LS(T) T                                                                                                                            &hold_tap LS(Y) Y         &hold_tap LS(U) U       &hold_tap LS(I) I          &hold_tap LS(O) O                  &hold_tap LS(P) P                    &hold_tap PIPE BACKSLASH
+&kp TAB                &hold_tap LS(A) A               &hold_tap LS(S) S           &hold_tap LS(D) D        &hold_tap LS(F) F          &hold_tap LS(G) G                                                                                                                            &hold_tap LS(H) H         &hold_tap LS(J) J       &hold_tap LS(K) K          &hold_tap LS(L) L                  &hold_tap COLON SEMI                 &hold_tap DOUBLE_QUOTES APOS
+&kp ESCAPE             &hold_tap LS(Z) Z               &hold_tap LS(X) X           &hold_tap LS(C) C        &hold_tap LS(V) V          &hold_tap LS(B) B     &hold_tap LEFT_SHIFT HOME  &kp LA(LC(TAB))       &tog 4       &tog 5                      &none   &hold_tap RCTRL END  &hold_tap LS(N) N         &hold_tap LS(M) M       &hold_tap LESS_THAN COMMA  &hold_tap GREATER_THAN DOT         &hold_tap QUESTION SLASH             &none
+&kp LEFT_WIN           &none                           &none                       &kp LEFT                 &kp DOWN                                         &hold_tap UNDER MINUS      &hold_tap PLUS EQUAL  &kp ENTER    &hold_tap LEFT_SHIFT SPACE  &tog 1  &kp BACKSPACE                                  &kp UP                  &kp RIGHT                  &hold_tap LEFT_BRACE LEFT_BRACKET  &hold_tap RIGHT_BRACE RIGHT_BRACKET  &none
             >;
         };
 
         mouse {
             bindings = <
-&none         &none      &none           &none              &none                                                                                                                                         &none         &none          &none            &none      &none
-&trans        &none      &kp F2          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none                                                                                                             &none      &none         &kp RC(W)      &kp RC(RS(T))    &kp F12    &none
-&kp DELETE    &none      &none           &mmv MOVE_UP       &kp LC(LS(TAB))  &kp LC(TAB)                                                                                                       &mo 2      &kp RA(LEFT)  &kp RC(A)      &kp RA(RIGHT)    &kp RC(S)  &none
-&kp TAB       &mkp RCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN     &mmv MOVE_RIGHT  &msc SCRL_UP                                                                                                      &kp RC(Z)  &kp RC(C)     &kp RC(V)      &kp LC(LA(TAB))  &kp RIGHT  &kp RC(T)
-&kp ESCAPE    &none      &none           &none              &msc SCRL_DOWN   &none         &hold_tap LEFT_SHIFT HOME  &kp LA(LC(TAB))  &none        &kp LEFT   &kp RIGHT  &hold_tap RCTRL END  &mo 3      &kp RC(Y)     &kp RC(SLASH)  &kp RC(F)        &kp RC(H)  &none
-&kp LEFT_WIN  &none      &none           &kp LEFT           &kp DOWN                       &mkp LCLK                  &mkp MCLK        &kp ENTER    &kp SPACE  &to 0      &kp BACKSPACE                   &kp UP_ARROW  &kp RIGHT      &none            &none      &none
+&none         &none      &none           &none              &none                                                                                                                                     &none         &none          &none            &none      &none
+&none         &none      &kp F2          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none                                                                                                         &none      &none         &kp RC(W)      &kp RC(RS(T))    &kp F12    &none
+&kp DELETE    &none      &none           &mmv MOVE_UP       &kp LC(LS(TAB))  &kp LC(TAB)                                                                                                   &mo 2      &kp RA(LEFT)  &kp RC(A)      &kp RA(RIGHT)    &kp RC(S)  &none
+&kp TAB       &mkp RCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN     &mmv MOVE_RIGHT  &msc SCRL_UP                                                                                                  &kp RC(Z)  &kp RC(C)     &kp RC(V)      &kp LC(LA(TAB))  &kp RIGHT  &kp RC(T)
+&kp ESCAPE    &none      &none           &none              &msc SCRL_DOWN   &none         &hold_tap LEFT_SHIFT HOME  &kp LA(LC(TAB))  &none        &none      &none  &hold_tap RCTRL END  &mo 3      &kp RC(Y)     &kp RC(SLASH)  &kp RC(F)        &kp RC(H)  &none
+&kp LEFT_WIN  &none      &none           &kp LEFT           &kp DOWN                       &mkp LCLK                  &mkp MCLK        &kp ENTER    &kp SPACE  &to 0  &kp BACKSPACE                   &kp UP_ARROW  &kp RIGHT      &none            &none      &none
             >;
         };
 
@@ -256,6 +256,17 @@
 &none  &kp LCTRL  &kp A         &kp S         &kp D         &kp F                                                               &none  &none  &none  &none  &none  &none
 &none  &none      &none         &kp X         &kp C         &kp V   &none      &none      &tog 4           &none  &none  &none  &none  &none  &none  &none  &none  &none
 &none  &none      &none         &kp MINUS     &kp PLUS              &kp SPACE  &mkp LCLK  &double_click    &none  &none  &none         &none  &none  &none  &none  &none
+            >;
+        };
+
+        bluetooth {
+            bindings = <
+&rgb_ug RGB_TOG  &none  &none  &none  &none                                                             &none         &none         &none         &none         &bt BT_CLR
+&none            &none  &none  &none  &none  &none                                               &none  &none         &none         &none         &none         &none
+&none            &none  &none  &none  &none  &none                                               &none  &none         &none         &none         &none         &none
+&none            &none  &none  &none  &none  &none                                               &none  &none         &none         &none         &none         &none
+&none            &none  &none  &none  &none  &none  &none  &none  &none    &tog 5  &none  &none  &none  &none         &none         &none         &none         &none
+&none            &none  &none  &none  &none         &none  &none  &none    &none   &none  &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
             >;
         };
     };
