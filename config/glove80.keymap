@@ -24,14 +24,9 @@
 #define SLOW_MOUSE 2
 #define FAST_MOUSE 3
 #define GAMING 4
-
-&hid_trackball_interface {
-    automouse-layer = <1>;
-    automouse-layer-timeout-ms = <600>;
-
-    // scroll-layers = <2>;
-    // snipe-layers = <3>;
-};
+#define BLUETOOTH 5
+#define MAC_QWERTY 6
+#define MAC_MOUSE 7
 
 &mmv_input_listener {
     // can try process_next - I think technically this layer is active so it applies it as well
